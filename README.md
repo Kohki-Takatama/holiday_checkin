@@ -264,12 +264,12 @@ SNSは交流がメインであることが多く、「宣言」という文化�
 
 ## 使用技術
 ### フロント
-- TailwindCSS（開発経験あり）
-- daisyUI（開発経験あり）
+- TailwindCSS v3.4.4（開発経験あり）
+- daisyUI v4.12.10（開発経験あり）
 ### バック
-- Ruby（カリキュラムのみ）
-- Rails（カリキュラムのみ）
-- PostgresSQL（使用経験なし）
+- Ruby v3.3.3（カリキュラムのみ）
+- Rails v7.1.3.4（カリキュラムのみ）
+- PostgresSQL v16.3（使用経験なし）
 ### PaaS
 - Fly.io（デプロイテストのみ）
 
@@ -277,7 +277,7 @@ SNSは交流がメインであることが多く、「宣言」という文化�
 ### レスポンシブ対応（開発経験あり）
 スマホ画面を基準に開発
 ### ユーザー登録・ログイン機能（カリキュラムのみ）
-本リリースのOAuthを見越して、gem: [device](https://github.com/heartcombo/devise)を使用  
+本リリースのOAuthを見越して、gem: [device v4.9.4](https://github.com/heartcombo/devise)を使用  
 username / email / password
 ### 「やること宣言」機能
 1つのinput formに記入する形  
@@ -323,17 +323,17 @@ X リンクカードを使用します（開発経験あり）
 - 16時 ~ 0時 #78C2CB
 - 投稿無し grey
 
-技術検証が必要ですが、[chart.js](https://qiita.com/fsd-ssk/items/f2c0faad04f690bcaed7#%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95)を使用し実装する予定です。
+技術検証が必要ですが、[chart.js v4.4.3](https://qiita.com/fsd-ssk/items/f2c0faad04f690bcaed7#%E6%A3%92%E3%82%B0%E3%83%A9%E3%83%95)を使用し実装する予定です。
 ### メール通知機能
 事前に設定された曜日に、cronを使用し、メールによるリマインドを行います。  
 配信時間は一律で朝9時とする予定です。
 ### カレンダーによる振り返り機能
 「わたしの宣言」ページからのリンクとして、自身の過去の宣言が見れるカレンダーページを設置します。  
-こちらも技術検証がまだですが、[Simple Calender](https://github.com/excid3/simple_calendar)を使用する予定です。
+こちらも技術検証がまだですが、[Simple Calender v3.0.3](https://github.com/excid3/simple_calendar)を使用する予定です。
 ### OAuthによる登録・ログイン
 X共有機能があり、Xで使用されているアイコンをユーザーアイコンとして取得したいため、X連携を行う予定です。  
 
-使用するのは[omniauth-twitter](https://github.com/arunagw/omniauth-twitter)です。  
+使用するのは[omniauth-twitter v1.4.0](https://github.com/arunagw/omniauth-twitter)です。  
 [device公式チュートリアル](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview)を参考に実装を行います。
 ### ユーザーネーム変更機能
 設定画面からユーザーネームを変更可能にします。  
