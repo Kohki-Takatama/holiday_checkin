@@ -342,3 +342,33 @@ X共有機能があり、Xで使用されているアイコンをユーザーア
 X連携をしたユーザーは、X連携時にXのアイコンを設定できるようにします。
 # ■ 画面遷移図
 [Figma](https://www.figma.com/design/tRQQQOaO2Pk4kAFKGt5HxU/%E4%BC%91%E6%97%A5%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%A4%E3%83%B3-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=R0pQOA9MbbI46JuS-1)
+# ■ ER図  
+```mermaid
+erDiagram
+	posts {
+		int id PK
+		int user_id FK
+		text body 
+		date created_at
+        date updated_at
+	}
+	users {
+		int id PK
+		string name
+		string email UK
+		string encrypted_password
+		date created_at
+		date updated_at
+	}
+    likes {
+        int id PK
+        int user_id FK
+        int post_id FK
+        int count
+    }
+    
+
+	users ||--o{ posts : ""
+    posts ||--o{ likes : ""
+    users ||--o{ likes : ""
+```
