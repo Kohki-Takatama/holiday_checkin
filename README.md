@@ -347,6 +347,7 @@ X連携をしたユーザーは、X連携時にXのアイコンを設定でき�
 # ■ 画面遷移図
 [Figma](https://www.figma.com/design/tRQQQOaO2Pk4kAFKGt5HxU/%E4%BC%91%E6%97%A5%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%82%A4%E3%83%B3-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=R0pQOA9MbbI46JuS-1)
 # ■ ER図  
+## MVP
 ```mermaid
 erDiagram
 	posts {
@@ -370,9 +371,68 @@ erDiagram
         int post_id FK
         int count
     }
-    
-
-	users ||--o{ posts : ""
+    users ||--o{ posts : ""
     posts ||--o{ likes : ""
     users ||--o{ likes : ""
+```
+## 本リリース
+
+ER図に関連する追加機能（⭐はテーブルやカラムを追加するもの）
+- ⭐休日の曜日設定機能
+    - テーブルは分けない
+    - 曜日ごとにカラムを用意する or 1つのカラムにまとめる
+        - 曜日ごと→1日を取るのが早く、全体を取るのが遅い
+        - 1カラム→その逆
+        - → どっちにしろ全体取ってくるので、1つのカラムにする
+- 与応援ユーザーの名前表示機能
+- 投稿編集機能
+- ⭐振り返りメモを書く機能
+    - postsテーブルで種別を分ける or 新しいテーブル
+        - 発展性を考えると分けるべき（5段階評価など）
+    - 宣言と違い、「投稿日と対象日がずれる」ことが発生するので、target_atを追加
+    - 他はpostsと一緒
+- ⭐メール通知機能（通知ON・OFF）
+- Oauth（X）
+- ユーザーネーム変更機能
+- ⭐ユーザーアイコン機能
+
+```mermaid
+erDiagram
+	posts {
+		int id PK
+		int user_id FK
+		text body 
+		date created_at
+    date updated_at
+	}
+	reviews {
+		int id PK
+		int user_id FK
+		text body
+		date created_at
+		date targeted_at
+		date updated_at
+	}
+	users {
+		int id PK
+		string name
+		string email UK
+		string encrypted_password
+		bit week_schedule
+		boolean mail_notice
+		string avatar
+		date created_at
+		date updated_at
+	}
+  likes {
+    int id PK
+    int user_id FK
+    int post_id FK
+    int count
+  }
+
+  users ||--o{ posts : ""
+  users ||--o{ likes : ""
+  users ||--o{ reviews : ""
+  posts ||--o{ likes : ""
 ```
