@@ -2,10 +2,10 @@
   <div class="text-center">
     <h1 class="text-2xl mb-4">Holiday Checkin</h1>
     <div class="mb-2">
-      <button class="btn btn-primary w-32 mb-2">ログイン</button>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-primary w-32 mb-2" %>
     </div>
     <div class="mb-4">
-      <button class="btn btn-primary w-32 mb-2">ユーザー登録</button>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary w-32 mb-2" %>
     </div>
     <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
       <div class="collapse-title text-lg font-medium">
