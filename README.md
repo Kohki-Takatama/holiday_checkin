@@ -281,7 +281,7 @@ SNSは交流がメインであることが多く、「宣言」という文化�
 ### レスポンシブ対応（開発経験あり）
 スマホ画面を基準に開発
 ### ユーザー登録・ログイン機能（カリキュラムのみ）
-本リリースのOAuthを見越して、gem: [device v4.9.4](https://github.com/heartcombo/devise)を使用  
+本リリースのOAuthを見越して、gem: [devise v4.9.4](https://github.com/heartcombo/devise)を使用  
 username / email / password
 ### 「やること宣言」機能
 1つのinput formに記入する形  
@@ -338,7 +338,7 @@ X リンクカードを使用します（開発経験あり）
 X共有機能があり、Xで使用されているアイコンをユーザーアイコンとして取得したいため、X連携を行う予定です。  
 
 使用するのは[omniauth-twitter v1.4.0](https://github.com/arunagw/omniauth-twitter)です。  
-[device公式チュートリアル](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview)を参考に実装を行います。
+[devise公式チュートリアル](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview)を参考に実装を行います。
 ### ユーザーネーム変更機能
 設定画面からユーザーネームを変更可能にします。  
 ### ユーザーアイコン機能
