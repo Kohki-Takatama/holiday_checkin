@@ -1,11 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="grid grid-cols-4 gap-4">
-      <% if @posts.present? %>
-        <%= render @posts %>
-      <% else %>
-        <div>投稿がありません</div>
-      <% end %>
-    </div>
-  </div>
+<div class="grid grid-cols-4 gap-4">
+  <% if @posts.present? %>
+    <%= render @posts %>
+  <% else %>
+    <div>投稿がありません</div>
+  <% end %>
 </div>
