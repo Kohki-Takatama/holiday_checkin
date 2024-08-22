@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <div class="card-body">
+      <p><%= post.user.name %></p>
+      <%= post.body %>
+    </div>
+  </div>
+<% end %>
