@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @posts = Post.includes(:user)
+  end
+
+  def show
+    @post = current_user.posts.last
   end
 
   def new
