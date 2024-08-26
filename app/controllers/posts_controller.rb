@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.today_posts.includes(:user)
   end
 
-  def show
-    @post = current_user.posts.last
-  end
 
   def new
     @post = Post.new
@@ -18,6 +15,14 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       render :new, status: :unpocessable_entity
+    end
+  end
+
+  def today
+    if current_user.posted_today?
+      @post = current_user.posts.today_posts
+    else
+      redirect_to new_post_path
     end
   end
 
