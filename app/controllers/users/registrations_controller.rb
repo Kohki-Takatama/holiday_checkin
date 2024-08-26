@@ -53,12 +53,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   # 通常のサインアップ後に表示されるページを指定
   def after_sign_up_path_for(resource)
-    root_path
+    posts_path
   end
 
   # The path used after sign up for inactive accounts.
   # サインアップ後、すぐにアクティブにならないケース（メール認証を挟むなど）で表示されるページを指定
   def after_inactive_sign_up_path_for(resource)
-    root_path
+    posts_path
   end
 end
