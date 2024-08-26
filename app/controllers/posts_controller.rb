@@ -6,7 +6,11 @@ class PostsController < ApplicationController
 
 
   def new
-    @post = Post.new
+    if current_user.posted_today?
+      redirect_to my_posts_posts_path
+    else
+      @post = Post.new
+    end
   end
 
   def create
@@ -18,9 +22,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def today
+  def my_posts
+    @posts = current_user.posts
     if current_user.posted_today?
-      @post = current_user.posts.today_posts
+      @today_post = current_user.posts.today_posts
     else
       redirect_to new_post_path
     end

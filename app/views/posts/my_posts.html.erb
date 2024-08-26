@@ -1,0 +1,13 @@
+今日の投稿
+<% if @today_post.present? %>
+  <%= render @today_post %>
+<% else %>
+  <div>今日はまだ投稿していません</div>
+<% end %>
+
+今までの投稿
+<% if @posts.present? %>
+  <%= render @posts %>
+<% else %>
+  <div>今までの投稿がありません</div>
+<% end %>
