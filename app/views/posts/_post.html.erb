@@ -4,8 +4,11 @@
     <%= post.body %>
   </div>
   <div class="card-actions">
-    <div id="like-btn-<%= post.id %>">
+    <%= "#{post.like_count} 応援" %>
+    <% if post.user == current_user %>
+      <%= link_to '編集', '#' , class: "btn" %>
+    <% else %>
       <%= render 'likes/like', post: post %>
-    </div>
+    <% end %>
   </div>
 </div>
