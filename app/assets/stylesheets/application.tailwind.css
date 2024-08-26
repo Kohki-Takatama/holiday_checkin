@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.alert-alert {
+  @apply alert-error
+}
+.alert-notice {
+  @apply alert-info
+}
