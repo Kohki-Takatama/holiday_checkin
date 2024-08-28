@@ -9,10 +9,9 @@ jobs:
     steps:
       - name: Check PR for Issue Link
         run: |
-          cat "$GITHUB_EVENT_PATH"
-          if ! grep -qiE "#\\d+" "$GITHUB_EVENT_PATH"; then
+          PR_BODY=$(jq -r '.pull_request.body' "$GITHUB_EVENT_PATH")
+          echo "$PR_BODY"
+          if ! echo "$PR_BODY" | grep -qiE "#\\d+"; then
             echo "Error: PR description must include a linked Issue (e.g., 'resolve #123')."
             exit 1
           fi
-
-
