@@ -11,7 +11,7 @@ jobs:
         run: |
           PR_BODY=$(jq -r '.pull_request.body' "$GITHUB_EVENT_PATH")
           echo "$PR_BODY"
-          if ! echo "$PR_BODY" | grep -qiE "#\\d+"; then
+          if ! echo "$PR_BODY" | grep -qiE "#[0-9]+"; then
             echo "Error: PR description must include a linked Issue (e.g., 'resolve #123')."
             exit 1
           fi
