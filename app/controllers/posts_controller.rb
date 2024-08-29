@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: [:edit, :update]
   def index
     @posts = Post.today_posts.includes(:user)
   end
-
 
   def new
     if current_user.posted_today?
@@ -22,6 +22,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    def update
+      if @post.update(post_params)
+        flash[:info] = '投稿が更新されました。'
+        redirect_to my_posts_posts_path
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
+  end
+
   def my_posts
     @posts = current_user.posts
     if current_user.posted_today?
@@ -35,5 +49,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:body)
+  end
+
+  def set_post
+    @post = current_user.posts.find(params[:id])
   end
 end

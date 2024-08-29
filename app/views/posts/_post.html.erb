@@ -6,7 +6,7 @@
   <div class="card-actions">
     <%= "#{post.like_count} 応援" %>
     <% if post.user == current_user %>
-      <%= link_to '編集', '#', class: "btn" %>
+      <%= link_to '編集', edit_post_path(post), class: "btn" %>
     <% else %>
       <%= render 'likes/like', post: post %>
     <% end %>
