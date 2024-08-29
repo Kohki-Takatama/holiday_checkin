@@ -1,13 +1,19 @@
-今日の投稿
-<% if @today_post.present? %>
-  <%= render @today_post %>
-<% else %>
-  <div>今日はまだ投稿していません</div>
-<% end %>
+<div class="max-w-3xl mx-auto p-6">
+  <div class="bg-white p-6 rounded-md shadow-md ring-2 ring-gray-800/50 mb-6">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">今日の投稿</h2>
+    <% if @today_post.present? %>
+      <%= render @today_post %>
+    <% else %>
+      <div class="text-gray-500">今日はまだ投稿していません</div>
+    <% end %>
+  </div>
 
-今までの投稿
-<% if @posts.present? %>
-  <%= render @posts %>
-<% else %>
-  <div>今までの投稿がありません</div>
-<% end %>
+  <div class="bg-white p-6 rounded-md shadow-md ring-2 ring-gray-800/50">
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4">今までの投稿</h2>
+    <% if @posts.present? %>
+      <%= render @posts %>
+    <% else %>
+      <div class="text-gray-500">今までの投稿がありません</div>
+    <% end %>
+  </div>
+</div>
