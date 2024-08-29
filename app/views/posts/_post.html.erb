@@ -1,12 +1,16 @@
-<div id="post-<%= post.id %>" class="card bg-base-100 shadow-xl">
+<div id="post-<%= post.id %>" class="card bg-base-100 shadow-xl ring-2 ring-gray-800/50 rounded-md m-2">
   <div class="card-body">
-    <p><%= post.user.name %></p>
-    <%= post.body %>
+    <div class="flex justify-between items-center mb-4">
+      <p class="text-lg font-semibold text-gray-700"><%= post.user.name %></p>
+      <%= "#{post.like_count} 応援" %>
+    </div>
+    <div class="mb-4">
+      <%= simple_format(post.body) %>
+    </div>
   </div>
-  <div class="card-actions">
-    <%= "#{post.like_count} 応援" %>
+  <div class="card-actions flex justify-end space-x-4 p-4">
     <% if post.user == current_user %>
-      <%= link_to '編集', edit_post_path(post), class: "btn" %>
+      <%= link_to '編集', edit_post_path(post), class: "btn-neutral btn" %>
     <% else %>
       <%= render 'likes/like', post: post %>
     <% end %>
