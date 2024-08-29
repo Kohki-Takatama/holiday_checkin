@@ -1,12 +1,13 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: add_template
+about: none
+
 ---
-# 📝 Additional explanation about new feature 📝
+## 📝 Additional explanation about new feature 📝
 add: 
 
-# 📝 References 📝
+## 📝 References 📝
 
 
-# ✅ How to check complete ✅
+## ✅ How to check complete ✅
 - [ ] 
