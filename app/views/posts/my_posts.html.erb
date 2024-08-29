@@ -11,7 +11,9 @@
   <div class="bg-white p-6 rounded-md shadow-md ring-2 ring-gray-800/50">
     <h2 class="text-2xl font-semibold text-gray-700 mb-4">今までの投稿</h2>
     <% if @posts.present? %>
-      <%= render @posts %>
+      <div class="max-h-64 overflow-y-auto">
+        <%= render @posts %>
+      </div>
     <% else %>
       <div class="text-gray-500">今までの投稿がありません</div>
     <% end %>
