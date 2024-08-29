@@ -1,7 +1,7 @@
 <div id="post-<%= post.id %>" class="card bg-base-100 shadow-xl">
   <div class="card-body">
     <p><%= post.user.name %></p>
-    <%= post.body %>
+    <%= simple_format(post.body) %>
   </div>
   <div class="card-actions">
     <%= "#{post.like_count} 応援" %>
