@@ -10,6 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
+  <header>
+    <% if user_signed_in? %>
+      <%= render 'layouts/header' %>
+    <% end %>
+  </header>
+
   <body>
     <% if user_signed_in? %>
       <div class="m-2 mt-5">
@@ -21,8 +27,5 @@
   </body>
   
   <footer>
-    <% if user_signed_in? %>
-      <%= render 'layouts/footer' %>
-    <% end %>
   </footer>
 </html>
