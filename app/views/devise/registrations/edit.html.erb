@@ -1,5 +1,5 @@
 <div class="flex justify-center h-screen">
-  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-lg">
+  <div class="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-lg pb-10">
     <h2 class="text-3xl font-semibold text-center text-gray-700 mb-6">設定</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "space-y-4" }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -54,15 +54,12 @@
       </div>
     <% end %>
 
-    <details class="mt-4">
+    <details class="mt-8 pl-1">
       <summary class="cursor-pointer text-sm text-red-600">アカウント削除</summary>
       <div class="mt-2">
         <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "アカウントを削除します。よろしいですか？", turbo_confirm: "アカウントを削除します。よろしいですか？" }, method: :delete, class: "btn btn-error btn-block" %>
       </div>
     </details>
 
-    <div class="mt-4 text-center">
-      <%= link_to "戻る", :back, class: "text-gray-600 hover:text-blue-600 underline" %>
-    </div>
   </div>
 </div>
