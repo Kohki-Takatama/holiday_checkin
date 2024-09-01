@@ -10,14 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <header>
-    <% if user_signed_in? %>
-      <%= render 'layouts/header' %>
-    <% end %>
-  </header>
-
   <body>
     <% if user_signed_in? %>
+      <header>
+        <%= render 'layouts/header' %>
+      </header>
+
       <div class="m-2 mt-5">
         <%= render "layouts/flash_message" %>
       </div>
@@ -25,7 +23,4 @@
     
     <%= yield %>
   </body>
-  
-  <footer>
-  </footer>
 </html>
