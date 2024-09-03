@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts
+    @post = current_user.posts
     if current_user.posted_today?
       @today_post = current_user.posts.today_posts
     else
