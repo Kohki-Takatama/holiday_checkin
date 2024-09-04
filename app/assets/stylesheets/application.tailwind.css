@@ -8,3 +8,16 @@
 .alert-notice {
   @apply alert-info
 }
+@media (max-width: 640px) {
+  .app-title, span {
+    display: none;
+  }
+  .navbar {
+    justify-content: center
+  }
+  .navbar svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+  }
+}
