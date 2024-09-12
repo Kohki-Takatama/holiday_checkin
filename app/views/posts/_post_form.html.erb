@@ -17,14 +17,14 @@
       <%# Text area input field for the post body %>
       <div>
         <label class="label">
-          <span class="text-base label-text"><%= f.label :body, "投稿内容" %></span>
+          <span class="text-base label-text"><%= f.label :body, "宣言内容" %></span>
         </label>
         <%= f.text_area :body, class: "w-full textarea textarea-bordered textarea-lg", rows: 10 %>
       </div>
       
       <%# Submit button %>
       <div>
-        <%= f.submit "投稿", class: "btn-neutral btn btn-block" %>
+        <%= f.submit "宣言！", class: "btn-neutral btn btn-block" %>
       </div>
     <% end %>
   </div>
