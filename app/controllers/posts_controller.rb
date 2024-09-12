@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     def update
       if @post.update(post_params)
-        flash[:info] = '投稿が更新されました。'
+        flash[:info] = '宣言を更新しました！'
         redirect_to my_posts_posts_path
       else
         render :edit, status: :unprocessable_entity
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @post = current_user.posts
+    @posts = current_user.posts.order(created_at: :desc).offset(1)
     if current_user.posted_today?
       @today_post = current_user.posts.today_posts
     else
