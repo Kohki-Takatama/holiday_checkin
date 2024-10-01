@@ -3,21 +3,22 @@
 @tailwind utilities;
 
 .alert-alert {
-  @apply alert-error
+  @apply alert-error;
 }
 .alert-notice {
-  @apply alert-info
+  @apply alert-info;
 }
 .post-index .card {
-  @apply max-w-lg
-  @apply min-w-96
+  @apply max-w-lg;
+  @apply min-w-96;
 }
 @media (max-width: 800px) {
-  .app-title, header span {
+  .app-title,
+  header span {
     display: none;
   }
   .navbar {
-    justify-content: center
+    justify-content: center;
   }
   .navbar svg {
     width: 24px;
@@ -25,6 +26,9 @@
     margin: 0 4px;
   }
   .card {
-    @apply w-screen
+    width: 100vw; /* @apply w-screenと同じ*/
+  }
+  .post-mypost .card {
+    width: auto;
   }
 }
