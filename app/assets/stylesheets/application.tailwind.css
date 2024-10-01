@@ -8,8 +8,12 @@
 .alert-notice {
   @apply alert-info
 }
-@media (max-width: 640px) {
-  .app-title, span {
+.post-index .card {
+  @apply max-w-lg
+  @apply min-w-96
+}
+@media (max-width: 800px) {
+  .app-title, header span {
     display: none;
   }
   .navbar {
